@@ -243,6 +243,28 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			$(document).ready(function () {
+				$('#unique').clipthru({
+					autoUpdate: true,
+					autoUpdateInterval: 30,
+					debug: true
+				});
+			});
+			if ("serviceWorker" in navigator) {
+				console.log("CLIENT: SW regestration in progress.");
+				navigator.serviceWorker
+					.register('/serviceWorker.js')
+					.then(() => {
+						console.log("CLIENT: Regestration Success");
+					})
+					.catch((err) => {
+						console.log("CLIENT: Regestration Failed", err);
+					})
+			} else {
+				console.log("CLIENT: Regestration Failed(Not Supported)");
+			}
+		</script>
 		
 	</body>
 
