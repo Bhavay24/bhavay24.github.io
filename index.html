@@ -230,6 +230,41 @@
 				</div>
 			</div>
 		</div>
+		<div class="container-fluid">
+			<div class="home darkblue">
+				<div class="row d-flex">
+					<div class="col">
+						<h2 class="font-weight-bold">Contact?</h2>
+						<span class="email"><a href="mailto:bhavay.arora8@gmail.com?subject=Hello">Email</a></span>
+						<span class="email"><a href="https://github.com/bhavay24">Github</a></span>
+						<br>
+						<span>PS: This section is not yet complete.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function () {
+				$('#unique').clipthru({
+					autoUpdate: true,
+					autoUpdateInterval: 30,
+					debug: true
+				});
+			});
+			if ("serviceWorker" in navigator) {
+				console.log("CLIENT: SW regestration in progress.");
+				navigator.serviceWorker
+					.register('/serviceWorker.js')
+					.then(() => {
+						console.log("CLIENT: Regestration Success");
+					})
+					.catch((err) => {
+						console.log("CLIENT: Regestration Failed", err);
+					})
+			} else {
+				console.log("CLIENT: Regestration Failed(Not Supported)");
+			}
+		</script>
 	</body>
 
 </html>
